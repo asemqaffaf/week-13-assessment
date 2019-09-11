@@ -1,5 +1,6 @@
 <html>
 <head>
+    
     <style>
         * {box-sizing: border-box}
 
@@ -73,7 +74,7 @@
         <hr>
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input id="emails" type="text" placeholder="Enter Email" name="email" required>
 
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
@@ -89,14 +90,36 @@
         <hr>
 
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        <button type="submit" class="registerbtn">Register</button>
+    <button  onclick="func()" type="submit" class="#" >Register</button>
+
     </div>
 
     <div class="container signin">
-        <p>Already have an account? <a href="#">Sign in</a>.</p>
+        <p>Already have an account? <a href="hello.php">Sign in</a>.</p>
     </div>
 </form>
+
 </body>
+<script>
+    function func(){
+        // document.getElementById("emails").style.direction = "rtl";
+
+        alert("Hello  :)")
+        .style.direction = "hello.php";
+    }
+    //   i got a problem yesterday in Xampp and i couldn't access the Database. and Ala'a knows about that issue.
+</script>
 <?php
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+?>
 
 
